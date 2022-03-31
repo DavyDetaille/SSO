@@ -256,7 +256,7 @@ spec:
           - sso
         from:
           kind: ImageStreamTag
-	  namespace: rh-sso-75
+          namespace: rh-sso-75
           name: 'sso-git:latest'
         lastTriggeredImage: >-
           image-registry.openshift-image-registry.svc:5000/rh-sso-75/sso-git@sha256:c78fd4cf621eba489ff1a4fe1f41972649cce50397c175504b67a8e25c3a12bc
