@@ -1,0 +1,397 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: dev
+    app.openshift.io/vcs-uri: 'https://github.com/DavyDetaille/SSO.git'
+    openshift.io/generated-by: OpenShiftWebConsole
+  name: sso-davy
+  namespace: rh-sso-75
+  uid: ae45b1d5-15b7-46f6-9f01-36b4fbcf9f68
+  resourceVersion: '3705856'
+  generation: 7
+  creationTimestamp: '2022-03-31T08:31:18Z'
+  labels:
+    application: sso
+    rhsso: 7.5.1.GA
+    app.kubernetes.io/component: sso-git
+    app.kubernetes.io/instance: sso-git
+    app.kubernetes.io/name: sso-git
+    app.kubernetes.io/part-of: rh-sso-app
+  managedFields:
+    - manager: openshift-controller-manager
+      operation: Update
+      apiVersion: apps.openshift.io/v1
+      time: '2022-03-31T08:31:18Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:application': {}
+            'f:rhsso': {}
+            'f:template': {}
+            'f:template.openshift.io/template-instance-owner': {}
+        'f:spec':
+          'f:replicas': {}
+          'f:selector':
+            .: {}
+            'f:deploymentConfig': {}
+          'f:strategy':
+            'f:activeDeadlineSeconds': {}
+            'f:recreateParams':
+              .: {}
+              'f:timeoutSeconds': {}
+            'f:type': {}
+          'f:template':
+            .: {}
+            'f:metadata':
+              .: {}
+              'f:creationTimestamp': {}
+              'f:labels':
+                .: {}
+                'f:application': {}
+                'f:deploymentConfig': {}
+              'f:name': {}
+            'f:spec':
+              .: {}
+              'f:containers':
+                .: {}
+                'k:{"name":"sso"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/etc/x509/https"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/etc/x509/jgroups"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/var/run/configmaps/service-ca"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources':
+                    .: {}
+                    'f:limits':
+                      .: {}
+                      'f:memory': {}
+                  'f:livenessProbe':
+                    .: {}
+                    'f:exec':
+                      .: {}
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:env':
+                    'k:{"name":"JGROUPS_CLUSTER_PASSWORD"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"DB_TX_ISOLATION"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"SSO_HOSTNAME"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"DB_MAX_POOL_SIZE"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"OPENSHIFT_DNS_PING_SERVICE_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    .: {}
+                    'k:{"name":"X509_CA_BUNDLE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"SSO_REALM"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"SSO_SERVICE_USERNAME"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"JGROUPS_PING_PROTOCOL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"OPENSHIFT_DNS_PING_SERVICE_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"SSO_SERVICE_PASSWORD"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"DB_MIN_POOL_SIZE"}':
+                      .: {}
+                      'f:name': {}
+                    'k:{"name":"SSO_ADMIN_USERNAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"SSO_ADMIN_PASSWORD"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:readinessProbe':
+                    .: {}
+                    'f:exec':
+                      .: {}
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8080,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8443,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8778,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8888,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+              'f:volumes':
+                .: {}
+                'k:{"name":"service-ca"}':
+                  .: {}
+                  'f:configMap':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:name': {}
+                  'f:name': {}
+                'k:{"name":"sso-x509-https-volume"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:secretName': {}
+                'k:{"name":"sso-x509-jgroups-volume"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:secretName': {}
+          'f:triggers': {}
+    - manager: openshift-controller-manager
+      operation: Update
+      apiVersion: apps.openshift.io/v1
+      time: '2022-03-31T08:31:25Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:details':
+            .: {}
+            'f:causes': {}
+            'f:message': {}
+          'f:latestVersion': {}
+          'f:observedGeneration': {}
+          'f:replicas': {}
+          'f:unavailableReplicas': {}
+          'f:updatedReplicas': {}
+      subresource: status
+spec:
+  strategy:
+    type: Recreate
+    resources: {}
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - sso
+        from:
+          kind: ImageStreamTag
+	  namespace: rh-sso-75
+          name: 'sso-git:latest'
+        lastTriggeredImage: >-
+          image-registry.openshift-image-registry.svc:5000/rh-sso-75/sso-git@sha256:c78fd4cf621eba489ff1a4fe1f41972649cce50397c175504b67a8e25c3a12bc
+    - type: ConfigChange
+  replicas: 1
+  revisionHistoryLimit: 10
+  test: false
+  selector:
+    deploymentConfig: sso
+  template:
+    metadata:
+      name: sso
+      creationTimestamp: null
+      labels:
+        application: sso
+        deploymentConfig: sso
+    spec:
+      volumes:
+        - name: sso-x509-https-volume
+          secret:
+            secretName: sso-x509-https-secret
+            defaultMode: 420
+        - name: sso-x509-jgroups-volume
+          secret:
+            secretName: sso-x509-jgroups-secret
+            defaultMode: 420
+        - name: service-ca
+          configMap:
+            name: sso-service-ca
+            defaultMode: 420
+      containers:
+        - resources:
+            limits:
+              memory: 1Gi
+          readinessProbe:
+            exec:
+              command:
+                - /bin/bash
+                - '-c'
+                - /opt/eap/bin/readinessProbe.sh
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          terminationMessagePath: /dev/termination-log
+          name: sso
+          livenessProbe:
+            exec:
+              command:
+                - /bin/bash
+                - '-c'
+                - /opt/eap/bin/livenessProbe.sh
+            initialDelaySeconds: 60
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          env:
+            - name: SSO_HOSTNAME
+            - name: DB_MIN_POOL_SIZE
+            - name: DB_MAX_POOL_SIZE
+            - name: DB_TX_ISOLATION
+            - name: JGROUPS_PING_PROTOCOL
+              value: openshift.DNS_PING
+            - name: OPENSHIFT_DNS_PING_SERVICE_NAME
+              value: sso-ping
+            - name: OPENSHIFT_DNS_PING_SERVICE_PORT
+              value: '8888'
+            - name: X509_CA_BUNDLE
+              value: >-
+                /var/run/configmaps/service-ca/service-ca.crt
+                /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+            - name: JGROUPS_CLUSTER_PASSWORD
+              value: iWcmvra0exFF3q2cyDmT1dOB4xju12FI
+            - name: SSO_ADMIN_USERNAME
+              value: 68bOqjSS
+            - name: SSO_ADMIN_PASSWORD
+              value: 8YUQnooamUNQlXgWYVboU3PgoRD4qQUC
+            - name: SSO_REALM
+            - name: SSO_SERVICE_USERNAME
+            - name: SSO_SERVICE_PASSWORD
+          ports:
+            - name: jolokia
+              containerPort: 8778
+              protocol: TCP
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+            - name: https
+              containerPort: 8443
+              protocol: TCP
+            - name: ping
+              containerPort: 8888
+              protocol: TCP
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: sso-x509-https-volume
+              readOnly: true
+              mountPath: /etc/x509/https
+            - name: sso-x509-jgroups-volume
+              readOnly: true
+              mountPath: /etc/x509/jgroups
+            - name: service-ca
+              readOnly: true
+              mountPath: /var/run/configmaps/service-ca
+          terminationMessagePolicy: File
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/openshift/sso75-openj9-openshift-rhel8@sha256:c2b7bc6cf585f1f4d50cc0a2e2065fe48403dff7ef0d6cd247c94397ae8d0e4a
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 75
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+      imagePullSecrets: []
+  paused: false
+status:
+  latestVersion: 1
+  observedGeneration: 2
+  replicas: 1
+  updatedReplicas: 1
+  availableReplicas: 0
+  unavailableReplicas: 1
+  details:
+    message: config change
+    causes:
+      - type: ConfigChange
+  conditions:
+    - type: Available
+      status: 'False'
+      lastUpdateTime: '2022-03-31T08:31:18Z'
+      lastTransitionTime: '2022-03-31T08:31:18Z'
+      message: Deployment config does not have minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-03-31T08:31:25Z'
+      lastTransitionTime: '2022-03-31T08:31:25Z'
+      reason: ReplicationControllerUpdated
+      message: replication controller "sso-1" is progressing
